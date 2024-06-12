@@ -24,6 +24,6 @@ MonoBehaviour:
       m_GuidLow: 6788136060739685248
       m_GuidHigh: 13868614964233589531
     m_Size: {x: 0.3, y: 0.22879378}
-    m_SpecifySize: 1
+    m_SpecifySize: 0
     m_Name: Pug
     m_Texture: {fileID: 0}
