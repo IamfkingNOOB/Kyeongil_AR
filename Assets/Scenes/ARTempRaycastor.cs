@@ -15,6 +15,25 @@ public class ARTempRaycastor : MonoBehaviour
         {
             UpdateCenterObject();
         }
+
+        if (Input.GetMouseButtonDown(0)) // Input.touchCount > 0
+        {
+            CheckTouch();
+        }
+    }
+
+    private void CheckTouch()
+    {
+       
+        var touch = Input.mousePosition; // Input.GetTouch(0); 
+        List<ARRaycastHit> hits = new List<ARRaycastHit>();
+        Manager_ARRaycast.Raycast(touch, hits, TrackableType.Planes); // touch.position
+
+        if (hits.Count > 0)
+        {
+            Pose firstHittedPlacePos = hits[0].pose;
+            Instantiate(Prefab_Object, firstHittedPlacePos.position, firstHittedPlacePos.rotation);
+        }
     }
 
 
